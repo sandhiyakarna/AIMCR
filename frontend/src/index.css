@@ -1,0 +1,368 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --color-brand-50: #f4f7fa;
+  --color-brand-100: #e6edf5;
+  --color-brand-200: #ccdbe9;
+  --color-brand-300: #99b8d6;
+  --color-brand-400: #6694c3;
+  --color-brand-500: #3371b0;
+  --color-brand-600: #2b6cb0;
+  --color-brand-700: #23538c;
+  --color-brand-800: #1a3c68;
+  --color-brand-900: #112544;
+  --color-slate-950: #070a13;
+  
+  /* System Design Tokens */
+  --color-bg-base: var(--background);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-navbar-bg: var(--navbar-bg);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-secondary: var(--card-secondary);
+  --color-border-color: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input-bg: var(--input-bg);
+  --color-modal-bg: var(--modal);
+  --color-dropdown-bg: var(--dropdown);
+  --color-table-header: var(--table-header);
+  --color-table-row: var(--table-row);
+  --color-hover-row: var(--hover-row);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  
+  --color-brand-primary: var(--primary);
+  --color-brand-primary-hover: var(--primary-hover);
+  --color-brand-success: var(--success);
+  --color-brand-warning: var(--warning);
+  --color-brand-danger: var(--danger);
+  --color-brand-info: var(--info);
+  
+  --font-sans: 'Inter', 'sans-serif';
+}
+
+/* Custom Theme Variables - Enterprise design system */
+:root {
+  --bg-primary: #0B1220;
+  --bg-secondary: #111827;
+  --bg-card: #1E293B;
+  --bg-elevated: #273449;
+  --sidebar-bg: #111827;
+  --navbar-bg: #111827;
+  --border: #334155;
+  --border-strong: #475569;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --danger: #DC2626;
+  --info: #0EA5E9;
+
+  --background: var(--bg-primary);
+  --surface: var(--bg-secondary);
+  --card: var(--bg-card);
+  --card-secondary: var(--bg-secondary);
+  --input-bg: var(--bg-card);
+  --modal: var(--bg-card);
+  --dropdown: var(--bg-elevated);
+  --table-header: var(--bg-secondary);
+  --table-row: var(--bg-card);
+  --hover-row: var(--bg-secondary);
+}
+
+.light {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --sidebar-bg: #FFFFFF;
+  --navbar-bg: #FFFFFF;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --danger: #DC2626;
+  --info: #0EA5E9;
+
+  --background: var(--bg-primary);
+  --surface: var(--bg-secondary);
+  --card: var(--bg-card);
+  --card-secondary: var(--bg-secondary);
+  --input-bg: var(--bg-card);
+  --modal: var(--bg-card);
+  --dropdown: var(--bg-elevated);
+  --table-header: var(--bg-secondary);
+  --table-row: var(--bg-card);
+  --hover-row: var(--bg-secondary);
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.35);
+  color: var(--text-primary);
+}
+
+/* Custom premium design classes utilizing variables */
+.glass-panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+  border-radius: 1rem;
+  transition: all 0.2s ease;
+}
+
+.dark .glass-panel {
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.28);
+}
+
+.glass-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+}
+
+.glass-input {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.glass-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.16);
+}
+
+.auth-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.auth-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--input-bg);
+  padding: 0.6rem 0.9rem;
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  outline: none;
+}
+
+.auth-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.16);
+}
+
+.app-shell-main {
+  background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
+}
+
+.dark .app-shell-main {
+  background: linear-gradient(180deg, rgba(11, 18, 32, 0.8), rgba(11, 18, 32, 1));
+}
+
+.report-editor h1 {
+  color: #123b62;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.report-editor h2 {
+  color: #123b62;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 1.75rem 0 0.55rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.report-editor p,
+.report-editor li,
+.report-editor td,
+.report-editor th {
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.report-editor ul {
+  padding-left: 1.25rem;
+}
+
+.report-editor table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-editor th,
+.report-editor td {
+  border: 1px solid #cbd5e1;
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+}
+
+.report-editor th {
+  width: 30%;
+  background: #eef3f8;
+  font-weight: 700;
+}
+
+.report-editor .report-subtitle {
+  color: #64748b;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.report-page {
+  position: relative;
+}
+
+.report-page-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2rem;
+  padding: 0 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.report-page-toolbar button {
+  display: inline-flex;
+  padding: 0.35rem;
+}
+
+.report-cover {
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.report-cover .report-kicker,
+.report-kicker {
+  color: #64748b;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.report-rule {
+  width: 12rem;
+  border-top: 2px solid #123b62;
+  margin: 0.6rem 0 5rem;
+}
+
+.report-cover h1 {
+  font-size: 2.3rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.report-cover-title {
+  max-width: 32rem;
+  margin-top: 2rem;
+  color: #334155;
+  font-family: Georgia, serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700;
+}
+
+.report-cover-meta {
+  margin-top: 7rem;
+  color: #475569;
+}
+
+.report-cover-meta p {
+  margin: 0.35rem 0;
+}
+
+.report-classification {
+  margin-top: auto;
+  color: #64748b;
+  font-size: 0.65rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* Gradient effects */
+.brand-gradient {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+}
+
+.brand-glow {
+  box-shadow: 0 0 20px 2px rgba(37, 99, 235, 0.15);
+}
+
+.dark .brand-glow {
+  box-shadow: 0 0 25px 2px rgba(37, 99, 235, 0.25);
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary);
+}

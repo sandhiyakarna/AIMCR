@@ -1,0 +1,13 @@
+INFO:     Started server process [332]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Error seeding database: (sqlite3.OperationalError) no such column: cases.priority
+[SQL: SELECT cases.id AS cases_id, cases.title AS cases_title, cases.description AS cases_description, cases.status AS cases_status, cases.priority AS cases_priority, cases.investigator_id AS cases_investigator_id, cases.created_at AS cases_created_at 
+FROM cases 
+WHERE cases.title = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('Case #2026-089A: Phishing & Wallet Takeover', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
